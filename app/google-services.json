@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "474527199153",
+    "project_id": "black-kite-9634e",
+    "storage_bucket": "black-kite-9634e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:474527199153:android:a9d304abe424d104c99790",
+        "android_client_info": {
+          "package_name": "com.gm.blackkite"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "474527199153-4pbrm23abe0rdheii2kaepg4r2ip294p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBed5zL3ptLYUJn-BMP2Tm9cx5k7-H-f5s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "474527199153-4pbrm23abe0rdheii2kaepg4r2ip294p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

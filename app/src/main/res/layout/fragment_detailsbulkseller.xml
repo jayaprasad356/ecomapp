@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragment.DetailsbulksellerFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+
+    <LinearLayout
+        android:id="@+id/processLyt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="@color/white"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:drawablePadding="@dimen/_10sdp"
+            android:text="Details"
+            android:textStyle="bold"
+            android:textSize="@dimen/_12sdp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="@color/txt_color"
+            app:drawableStartCompat="@drawable/ic_next_process" />
+
+        <TextView
+            android:id="@+id/tvSummary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:drawablePadding="@dimen/_10sdp"
+            android:text="Upload Document"
+            android:textSize="@dimen/_12sdp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="@color/gray"
+            app:drawableStartCompat="@drawable/ic_next_process_gray" />
+
+
+        <TextView
+            android:id="@+id/tvPayment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawablePadding="@dimen/_10sdp"
+            android:text="Approval"
+            android:textSize="@dimen/_12sdp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="@color/gray"
+            app:drawableStartCompat="@drawable/ic_next_process_gray" />
+    </LinearLayout>
+
+
+        <TextView
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tell us about your business"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:textSize="@dimen/_14sdp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            />
+
+
+        <Spinner
+            android:id="@+id/spinCountry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:paddingLeft="8dp"
+            android:popupBackground="@android:color/white"
+            android:scrollbars="none"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:spinnerMode="dropdown"
+            android:entries="@array/about_business"
+            />
+
+
+
+
+        <TextView
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Business Details"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:textSize="@dimen/_14sdp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_gravity="center_horizontal"
+            />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/transparent"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_marginRight="@dimen/_5sdp"
+            >
+
+            <EditText
+                android:id="@+id/edBusinessname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                android:drawablePadding="@dimen/dimen_10dp"
+                android:hint="Business Name"
+                android:importantForAutofill="yes"
+                android:padding="@dimen/dimen_7dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1.5dp"
+            android:background="@color/gray"
+            android:layout_margin="@dimen/_5sdp"/>
+
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/transparent"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_marginRight="@dimen/_5sdp"
+            >
+
+            <EditText
+                android:id="@+id/edPannumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                android:drawablePadding="@dimen/dimen_10dp"
+                android:hint="PAN Number"
+                android:importantForAutofill="yes"
+                android:padding="@dimen/dimen_7dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1.5dp"
+            android:background="@color/gray"
+            android:layout_margin="@dimen/_5sdp"/>
+
+
+        <TextView
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Address"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:textSize="@dimen/_14sdp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_gravity="center_horizontal"
+            />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            >
+
+
+        <RelativeLayout
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/transparent"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_marginRight="@dimen/_5sdp"
+            >
+
+            <EditText
+                android:id="@+id/edCity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                android:drawablePadding="@dimen/dimen_10dp"
+                android:hint="City"
+                android:importantForAutofill="yes"
+                android:padding="@dimen/dimen_7dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1.5dp"
+            android:background="@color/gray"
+            android:layout_margin="@dimen/_5sdp"/>
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+
+
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/transparent"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_marginRight="@dimen/_5sdp"
+            >
+
+            <EditText
+                android:id="@+id/edPinCode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                android:drawablePadding="@dimen/dimen_10dp"
+                android:hint="Pincode"
+                android:importantForAutofill="yes"
+                android:padding="@dimen/dimen_7dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1.5dp"
+                android:background="@color/gray"
+                android:layout_margin="@dimen/_5sdp"/>
+
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+
+
+        </LinearLayout>
+
+
+
+        <TextView
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Point Person"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:textSize="@dimen/_14sdp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_gravity="center_horizontal"
+            />
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/transparent"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_marginRight="@dimen/_5sdp"
+            >
+
+            <EditText
+                android:id="@+id/edName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                android:drawablePadding="@dimen/dimen_10dp"
+                android:hint="Name"
+                android:importantForAutofill="yes"
+                android:padding="@dimen/dimen_7dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1.5dp"
+            android:background="@color/gray"
+            android:layout_margin="@dimen/_5sdp"/>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/transparent"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_marginRight="@dimen/_5sdp"
+            >
+
+            <EditText
+                android:id="@+id/edEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                android:drawablePadding="@dimen/dimen_10dp"
+                android:hint="Email"
+                android:importantForAutofill="yes"
+                android:padding="@dimen/dimen_7dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1.5dp"
+            android:background="@color/gray"
+            android:layout_margin="@dimen/_5sdp"/>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/transparent"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_marginRight="@dimen/_5sdp"
+            >
+
+            <EditText
+                android:id="@+id/edMobileNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                android:drawablePadding="@dimen/dimen_10dp"
+                android:hint="Mobile Number"
+                android:importantForAutofill="yes"
+                android:padding="@dimen/dimen_7dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1.5dp"
+            android:background="@color/gray"
+            android:layout_margin="@dimen/_5sdp"/>
+
+
+        <Button
+            android:id="@+id/btnNext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_25dp"
+            android:background="@drawable/card_shadow"
+            android:backgroundTint="@color/bg_gray"
+            android:paddingTop="@dimen/_18sdp"
+            android:paddingBottom="@dimen/_18sdp"
+            android:text="Next"
+            android:textAllCaps="false"
+            android:layout_margin="@dimen/_10sdp"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold" />
+
+
+
+    </LinearLayout>
+
+</FrameLayout>
