@@ -3,8 +3,8 @@ package com.gm.blackkite.helper;
 import java.util.HashMap;
 
 public class Constant {
-    //public static final String MainBaseUrl = "http://192.168.43.122/blackkite/"; //Admin panel url
-    public static final String MainBaseUrl = "http://admin.blackkite.site/"; //Admin panel url
+    public static final String MainBaseUrl = "http://192.168.43.38/ecom/"; //Admin panel url
+    //public static final String MainBaseUrl = "http://admin.blackkite.site/"; //Admin panel url
 
     public static final String WebSiteUrl = ""; //Admin panel url
 
@@ -57,6 +57,7 @@ public class Constant {
     public static final String PAPAL_URL = MainBaseUrl + "paypal/create-payment.php";
     public static final String LOGIN_URL = BaseUrl + "login.php";
     public static final String GET_ALL_DATA_URL = BaseUrl + "get-all-data.php";
+    public static final String SLIDER_IMAGES_URL = BaseUrl + "slider-images.php";
     public static final String GET_PRODUCTS_URL = BaseUrl + "get-products.php";
     public static final String GET_SELLER_DATA_URL = BaseUrl + "get-seller-data.php";
     public static final String SETTING_URL = BaseUrl + "settings.php";
@@ -81,6 +82,7 @@ public class Constant {
     public static final String AccessKeyVal = "90336";
     public static final String PROFILE = "profile";
     public static final String UPLOAD_PROFILE = "upload_profile";
+    public static final String GET_SLIDER_IMAGES_BY_CATEGORIES = "get-slider-images-by-categories";
     public static final String GetVal = "1";
     public static final String GET_PIN_CODES = "get_pincodes";
     public static final String GET_CITIES = "get_cities";

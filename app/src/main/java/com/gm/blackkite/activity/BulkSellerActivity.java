@@ -14,14 +14,10 @@ import com.gm.blackkite.fragment.DocumentuploadFragment;
 import com.gm.blackkite.fragment.HomeFragment;
 import com.google.android.material.tabs.TabLayout;
 
-public class Bulk_sellerActivity extends AppCompatActivity {
+public class BulkSellerActivity extends AppCompatActivity {
     public static FragmentManager fm = null;
     Fragment detailsbulksellerFragment;
     Fragment uploaddocumentsFragment;
-
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,11 +25,8 @@ public class Bulk_sellerActivity extends AppCompatActivity {
         fm = getSupportFragmentManager();
         detailsbulksellerFragment = new DetailsbulksellerFragment();
         uploaddocumentsFragment = new DocumentuploadFragment();
-
-
-
-        //fm.beginTransaction().add(R.id.container, detailsbulksellerFragment).commit();
-        fm.beginTransaction().add(R.id.container, uploaddocumentsFragment).commit();
+        fm.beginTransaction().add(R.id.container, detailsbulksellerFragment).commit();
+        //fm.beginTransaction().add(R.id.container, uploaddocumentsFragment).commit();
 
 
 

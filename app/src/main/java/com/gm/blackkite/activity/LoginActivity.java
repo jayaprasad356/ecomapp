@@ -146,7 +146,7 @@ public class LoginActivity extends AppCompatActivity {
         tvCreatebulkseller.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(LoginActivity.this,Bulk_sellerActivity.class);
+                Intent intent = new Intent(LoginActivity.this, BulkSellerActivity.class);
                 startActivity(intent);
             }
         });

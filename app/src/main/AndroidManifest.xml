@@ -58,7 +58,7 @@
         android:usesCleartextTraffic="true"
         tools:replace="android:usesCleartextTraffic">
         <activity
-            android:name="com.gm.blackkite.activity.Bulk_sellerActivity"
+            android:name="com.gm.blackkite.activity.BulkSellerActivity"
             android:exported="true" />
         <activity
             android:name="com.gm.blackkite.activity.PaymentActivity"

@@ -83,7 +83,7 @@ public class SubCategoryFragment extends Fragment {
     int size;
     Timer swipeTimer;
     Handler handler;
-    LinearLayout mMarkersLayout;
+    LinearLayout mMarkersLayout,linearslider;
     int timerDelay = 0, timerWaiting = 0;
 
     @Override
@@ -91,6 +91,7 @@ public class SubCategoryFragment extends Fragment {
 
         root = inflater.inflate(R.layout.fragment_sub_category, container, false);
         mPager = root.findViewById(R.id.pager);
+        linearslider = root.findViewById(R.id.linearslider);
         mPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int i, float v, int i1) {
@@ -129,9 +130,9 @@ public class SubCategoryFragment extends Fragment {
 
         filterIndex = -1;
 
-            ApiConfig.GetSettings(activity);
-            GetCategory();
-            GetProducts();
+        ApiConfig.GetSettings(activity);
+        GetCategory();
+        GetProducts();
         timerDelay = 3000;
         timerWaiting = 3000;
 
@@ -194,13 +195,8 @@ public class SubCategoryFragment extends Fragment {
             swipeTimer.cancel();
         }
         Map<String, String> params = new HashMap<>();
-        if (session.getBoolean(Constant.IS_USER_LOGIN)) {
-            params.put(Constant.USER_ID, session.getData(Constant.ID));
-        }
-        if (session.getBoolean(Constant.GET_SELECTED_PINCODE) && !session.getData(Constant.GET_SELECTED_PINCODE_ID).equals("0")) {
-            params.put(Constant.PINCODE_ID, session.getData(Constant.GET_SELECTED_PINCODE_ID));
-        }
-
+        params.put(Constant.GET_SLIDER_IMAGES_BY_CATEGORIES, Constant.GetVal);
+        params.put(Constant.CATEGORY_ID, id);
         ApiConfig.RequestToVolley((result, response) -> {
             if (result) {
                 try {
@@ -208,8 +204,9 @@ public class SubCategoryFragment extends Fragment {
                     JSONObject jsonObject = new JSONObject(response);
 
                     if (!jsonObject.getBoolean(Constant.ERROR)) {
+                        linearslider.setVisibility(View.VISIBLE);
 
-                        GetSlider(jsonObject.getJSONArray(Constant.SLIDER_IMAGES));
+                        GetSlider(jsonObject.getJSONArray(Constant.DATA));
                     } else {
                         nestedScrollView.setVisibility(View.VISIBLE);
                         mShimmerViewContainer.setVisibility(View.GONE);
@@ -223,7 +220,7 @@ public class SubCategoryFragment extends Fragment {
 
                 }
             }
-        }, activity, Constant.GET_ALL_DATA_URL, params, false);
+        }, activity, Constant.SLIDER_IMAGES_URL, params, false);
     }
 
 

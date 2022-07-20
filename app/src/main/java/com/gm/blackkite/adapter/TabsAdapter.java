@@ -4,7 +4,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 
-import com.gm.blackkite.fragment.ApprovalFragment;
+import com.gm.blackkite.fragment.BulksellerApprovalFragment;
 import com.gm.blackkite.fragment.DetailsbulksellerFragment;
 import com.gm.blackkite.fragment.DocumentuploadFragment;
 
@@ -32,7 +32,7 @@ public class TabsAdapter extends FragmentStatePagerAdapter {
                 return UPLOAD;
 
             case 2:
-                ApprovalFragment APPROVAL = new ApprovalFragment();
+                BulksellerApprovalFragment APPROVAL = new BulksellerApprovalFragment();
                 return APPROVAL;
 
 

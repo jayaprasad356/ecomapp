@@ -186,30 +186,23 @@ public class ProfileFragment extends Fragment {
             mBottomSheetDialog.setContentView(sheetView);
             mBottomSheetDialog.getWindow().setLayout(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
             mBottomSheetDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-
             EditText edtOldPassword = sheetView.findViewById(R.id.edtOldPassword);
             EditText edtNewPassword = sheetView.findViewById(R.id.edtNewPassword);
             EditText edtConfirmNewPassword = sheetView.findViewById(R.id.edtConfirmNewPassword);
             ImageView imgChangePasswordClose = sheetView.findViewById(R.id.imgChangePasswordClose);
             Button btnChangePassword = sheetView.findViewById(R.id.btnChangePassword);
-
             edtOldPassword.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_pass, 0, R.drawable.ic_show, 0);
             edtNewPassword.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_pass, 0, R.drawable.ic_show, 0);
             edtConfirmNewPassword.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_pass, 0, R.drawable.ic_show, 0);
-
             Utils.setHideShowPassword(edtOldPassword);
             Utils.setHideShowPassword(edtNewPassword);
             Utils.setHideShowPassword(edtConfirmNewPassword);
             mBottomSheetDialog.setCancelable(true);
-
-
             imgChangePasswordClose.setOnClickListener(v -> mBottomSheetDialog.dismiss());
-
             btnChangePassword.setOnClickListener(view -> {
                 String oldpsw = edtOldPassword.getText().toString();
                 String password = edtNewPassword.getText().toString();
                 String cpassword = edtConfirmNewPassword.getText().toString();
-
                 if (!password.equals(cpassword)) {
                     edtConfirmNewPassword.requestFocus();
                     edtConfirmNewPassword.setError(activity.getString(R.string.pass_not_match));
@@ -305,14 +298,10 @@ public class ProfileFragment extends Fragment {
     }
 
     public void SelectProfileImage() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            if (ContextCompat.checkSelfPermission(activity, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
-                requestPermissions(new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, reqWritePermission);
-            } else if (ContextCompat.checkSelfPermission(activity, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
-                requestPermissions(new String[]{Manifest.permission.CAMERA}, reqWritePermission);
-            } else {
-                selectDialog();
-            }
+        if (ContextCompat.checkSelfPermission(activity, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+            requestPermissions(new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, reqWritePermission);
+        } else if (ContextCompat.checkSelfPermission(activity, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
+            requestPermissions(new String[]{Manifest.permission.CAMERA}, reqWritePermission);
         } else {
             selectDialog();
         }
