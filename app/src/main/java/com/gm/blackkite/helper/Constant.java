@@ -3,8 +3,8 @@ package com.gm.blackkite.helper;
 import java.util.HashMap;
 
 public class Constant {
-    public static final String MainBaseUrl = "http://192.168.43.38/ecom/"; //Admin panel url
-    //public static final String MainBaseUrl = "http://admin.blackkite.site/"; //Admin panel url
+   // public static final String MainBaseUrl = "http://192.168.43.38/ecom/"; //Admin panel url
+    public static final String MainBaseUrl = "http://admin.blackkite.site/"; //Admin panel url
 
     public static final String WebSiteUrl = ""; //Admin panel url
 

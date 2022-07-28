@@ -25,6 +25,7 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RatingBar;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.Spinner;
@@ -97,6 +98,7 @@ public class ProductDetailFragment extends Fragment {
     LottieAnimationView lottieAnimationView;
     ShimmerFrameLayout mShimmerViewContainer;
     Button btnAddToCart;
+    RatingBar ratingbar;
 
     @SuppressLint({"NotifyDataSetChanged", "SetTextI18n"})
     @Override
@@ -159,6 +161,7 @@ public class ProductDetailFragment extends Fragment {
         relativeLayout = root.findViewById(R.id.relativeLayout);
         tvMore = root.findViewById(R.id.tvMore);
         tvPinCode = root.findViewById(R.id.tvPinCode);
+        ratingbar=root.findViewById(R.id.ratingBar);
 
         tvReturnable = root.findViewById(R.id.tvReturnable);
         tvCancellable = root.findViewById(R.id.tvCancellable);
