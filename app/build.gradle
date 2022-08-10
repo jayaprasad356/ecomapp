@@ -5,7 +5,7 @@ apply plugin: 'com.google.firebase.crashlytics'
 android {
     compileSdkVersion 30
     defaultConfig {
-        applicationId "com.gm.blackkite"
+        applicationId "com.gm.onlukr"
         minSdkVersion 27
         targetSdkVersion 30
         versionCode 1

@@ -25,7 +25,7 @@
         android:layout_centerHorizontal="true"
         android:contentDescription="@string/app_name"
         android:layout_marginBottom="@dimen/_30sdp"
-        android:src="@drawable/black_kite_circle" />
+        android:src="@drawable/onlukr" />
 
     <!--Login lyt-->
     <ScrollView
@@ -261,7 +261,7 @@
                 android:orientation="vertical"
                 android:visibility="gone">
 
-                <com.gm.blackkite.ui.PinView
+                <com.gm.onlukr.ui.PinView
                     android:id="@+id/pinViewOTP"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

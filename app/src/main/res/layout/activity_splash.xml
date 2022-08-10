@@ -21,6 +21,6 @@
         android:contentDescription="@string/app_name"
         android:minWidth="@dimen/_220sdp"
         android:minHeight="@dimen/_220sdp"
-        android:src="@drawable/bkcenterlogotrans" />
+        android:src="@drawable/onlukr" />
 
 </RelativeLayout>
