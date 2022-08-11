@@ -174,7 +174,6 @@
                     android:background="@color/light_grey" />
 
                 <TextView
-                    android:visibility="gone"
                     app:drawableEndCompat="@drawable/ic_right_arrow"
                     android:id="@+id/tvMenuOrders"
                     android:layout_width="match_parent"
@@ -248,8 +247,6 @@
                     app:drawableTint="@color/drawer_icon_color" />
 
                 <TextView
-                    android:visibility="gone"
-
                     app:drawableEndCompat="@drawable/ic_right_arrow"
                     android:id="@+id/tvMenuChangePassword"
                     android:layout_width="match_parent"
@@ -273,8 +270,6 @@
                     app:drawableTint="@color/drawer_icon_color" />
 
                 <TextView
-                    android:visibility="gone"
-
                     app:drawableEndCompat="@drawable/ic_right_arrow"
                     android:id="@+id/tvMenuManageAddresses"
                     android:layout_width="match_parent"
@@ -330,8 +325,6 @@
                 android:background="@color/light_grey" />
 
             <TextView
-                android:visibility="gone"
-
                 android:id="@+id/tvMenuContactUs"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -355,8 +348,6 @@
                 app:drawableTint="@color/drawer_icon_color" />
 
             <TextView
-                android:visibility="gone"
-
                 android:id="@+id/tvMenuAboutUs"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -380,8 +371,6 @@
                 app:drawableTint="@color/drawer_icon_color" />
 
             <TextView
-                android:visibility="gone"
-
                 android:id="@+id/tvMenuRateUs"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -405,8 +394,6 @@
                 app:drawableTint="@color/drawer_icon_color" />
 
             <TextView
-                android:visibility="gone"
-
                 android:id="@+id/tvMenuShareApp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

@@ -168,6 +168,12 @@
                         android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
                         android:textSize="@dimen/_12sdp" />
                 </LinearLayout>
+                <RatingBar
+                    android:id="@+id/ratingBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="?android:attr/ratingBarStyleSmall"
+                    />
             </LinearLayout>
         </RelativeLayout>
 
@@ -241,6 +247,7 @@
                 android:textStyle="bold"
                 android:visibility="visible" />
         </RelativeLayout>
+
 
     </LinearLayout>
 

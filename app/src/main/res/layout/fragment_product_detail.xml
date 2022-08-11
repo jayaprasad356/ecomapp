@@ -374,8 +374,6 @@
                         android:layout_gravity="center"
                         android:gravity="center"
                         android:orientation="horizontal">
-
-
                         <Button
                             android:id="@+id/btnAddToCart"
                             android:layout_width="match_parent"
@@ -579,24 +577,32 @@
                     </LinearLayout>
 
                 </LinearLayout>
-
-
-
-                 <TextView
-                     android:layout_width="match_parent"
-                     android:layout_height="wrap_content"
-                     android:text="Rate us"
-                     android:layout_margin="@dimen/_10sdp"
-                     android:textColor="@color/black"
-                     />
-                <RatingBar
-                    android:id="@+id/ratingBar"
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:id="@+id/rateLinear"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="72dp"
-                    android:layout_marginTop="10dp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    android:orientation="vertical">
+                    <RatingBar
+                        android:id="@+id/ratingBar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:stepSize="1"
+                        android:layout_gravity="center"
+                        />
+                    <Button
+                        android:id="@+id/btnRate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/_30sdp"
+                        android:text="Rate Now"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_button"
+                        android:textColor="@color/white"
+                        android:layout_gravity="center"/>
+
+                </LinearLayout>
+
 
 
 

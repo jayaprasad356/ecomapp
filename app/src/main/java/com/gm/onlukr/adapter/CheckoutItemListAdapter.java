@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
@@ -19,6 +20,7 @@ import com.gm.onlukr.helper.ApiConfig;
 import com.gm.onlukr.helper.Constant;
 import com.gm.onlukr.helper.Session;
 import com.gm.onlukr.model.Cart;
+import com.squareup.picasso.Picasso;
 
 /**
  * Created by shree1 on 3/16/2017.
@@ -60,6 +62,10 @@ public class CheckoutItemListAdapter extends RecyclerView.Adapter<CheckoutItemLi
             }
 
             String taxPercentage = cart.getItems().get(0).getTax_percentage();
+            Picasso.get().load(cart.getItems().get(0).getImage()).fit().centerInside()
+                    .placeholder(R.drawable.placeholder)
+                    .error(R.drawable.placeholder)
+                    .into(holder.imgProduct);
 
             holder.tvItemName.setText(cart.getItems().get(0).getName() + " (" + cart.getItems().get(0).getMeasurement() + " " + ApiConfig.toTitleCase(cart.getItems().get(0).getUnit()) + ")");
 
@@ -132,6 +138,7 @@ public class CheckoutItemListAdapter extends RecyclerView.Adapter<CheckoutItemLi
         public final TextView tvTaxTitle;
         public final TextView tvTaxAmount;
         public final TextView tvDeliverable;
+        public final ImageView imgProduct;
 
         public ItemHolder(View itemView) {
             super(itemView);
@@ -144,6 +151,7 @@ public class CheckoutItemListAdapter extends RecyclerView.Adapter<CheckoutItemLi
             tvTaxTitle = itemView.findViewById(R.id.tvTaxTitle);
             tvTaxAmount = itemView.findViewById(R.id.tvTaxAmount);
             tvDeliverable = itemView.findViewById(R.id.tvDeliverable);
+            imgProduct = itemView.findViewById(R.id.imgProduct);
         }
 
 

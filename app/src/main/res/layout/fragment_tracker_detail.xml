@@ -110,12 +110,23 @@
                 android:layout_below="@+id/recyclerView"
                 android:layout_marginTop="10dp"
                 android:background="@color/bg_gray" />
+            <TextView
+                android:id="@+id/tvcountDown"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="00:00:00"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:textSize="@dimen/_30sdp"
+                android:layout_below="@+id/line2"/>
+
 
             <LinearLayout
                 android:id="@+id/lytOtherDetail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/line2"
+                android:layout_below="@+id/tvcountDown"
                 android:layout_margin="@dimen/_10sdp"
                 android:orientation="vertical">
 

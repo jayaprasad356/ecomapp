@@ -99,6 +99,8 @@ public class ProductDetailFragment extends Fragment {
     ShimmerFrameLayout mShimmerViewContainer;
     Button btnAddToCart;
     RatingBar ratingbar;
+    Button btnRate;
+    LinearLayout rateLinear;
 
     @SuppressLint({"NotifyDataSetChanged", "SetTextI18n"})
     @Override
@@ -124,6 +126,7 @@ public class ProductDetailFragment extends Fragment {
         variantPosition = getArguments().getInt(Constant.VARIANT_POSITION, 0);
         id = getArguments().getString(Constant.ID);
 
+        rateLinear = root.findViewById(R.id.rateLinear);
         tvQuantity = root.findViewById(R.id.tvQuantity);
         scrollView = root.findViewById(R.id.scrollView);
         mMarkersLayout = root.findViewById(R.id.layout_markers);
@@ -167,14 +170,28 @@ public class ProductDetailFragment extends Fragment {
         tvCancellable = root.findViewById(R.id.tvCancellable);
         imgReturnable = root.findViewById(R.id.imgReturnable);
         imgCancellable = root.findViewById(R.id.imgCancellable);
+        btnRate = root.findViewById(R.id.btnRate);
 
         lottieAnimationView = root.findViewById(R.id.lottieAnimationView);
         lottieAnimationView.setAnimation("add_to_wish_list.json");
 
         mShimmerViewContainer = root.findViewById(R.id.mShimmerViewContainer);
+        if (session.getBoolean(Constant.IS_USER_LOGIN)) {
+            rateLinear.setVisibility(View.VISIBLE);
+        }
+        btnRate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (ratingbar.getRating() != 0){
+                    addRatings();
+
+                }
+            }
+        });
 
         GetProductDetail(id);
         GetSettings(activity);
+        GetRatings();
 
         tvMore.setOnClickListener(v -> ShowSimilar());
 
@@ -196,6 +213,52 @@ public class ProductDetailFragment extends Fragment {
         tvPinCode.setOnClickListener(v -> OpenBottomDialog(activity));
 
         return root;
+    }
+
+    private void GetRatings()
+    {
+        Map<String, String> params = new HashMap<>();
+        params.put(Constant.USER_ID, session.getData(Constant.ID));
+        params.put(Constant.PRODUCT_ID, id);
+        ApiConfig.RequestToVolley((result, response) -> {
+            if (result) {
+                try {
+                    JSONObject jsonObject = new JSONObject(response);
+                    if (!jsonObject.getBoolean(Constant.ERROR)) {
+                        ratingbar.setRating(Float.parseFloat(jsonObject.getString(Constant.RATINGS)));
+
+                    }
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        }, activity, Constant.GET_USER_RATINGS_URL, params, false);
+
+    }
+
+    private void addRatings()
+    {
+        Map<String, String> params = new HashMap<>();
+        params.put(Constant.USER_ID, session.getData(Constant.ID));
+        params.put(Constant.PRODUCT_ID, product.getPriceVariations().get(0).getProduct_id());
+        params.put(Constant.RATINGS, ratingbar.getRating() +"");
+        ApiConfig.RequestToVolley((result, response) -> {
+            if (result) {
+                try {
+                    JSONObject jsonObject = new JSONObject(response);
+                    if (!jsonObject.getBoolean(Constant.ERROR)) {
+                        Toast.makeText(activity, ""+jsonObject.getString(Constant.MESSAGE), Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(activity, ""+jsonObject.getString(Constant.MESSAGE), Toast.LENGTH_SHORT).show();
+                    }
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        }, activity, Constant.ADD_RATINGS_URL, params, false);
+
     }
 
 

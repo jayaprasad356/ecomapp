@@ -22,10 +22,19 @@ public class Product implements Serializable {
     String type;
     String seller_name;
     String tax_percentage;
+    String ratings;
     String total_allowed_quantity;
     ArrayList<PriceVariation> variants;
     ArrayList<String> other_images;
     boolean is_favorite;
+
+    public String getRatings() {
+        return ratings;
+    }
+
+    public void setRatings(String ratings) {
+        this.ratings = ratings;
+    }
 
     public String getTotal_allowed_quantity() {
         return total_allowed_quantity;

@@ -159,10 +159,19 @@
                             android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
                             android:textSize="@dimen/_12sdp" />
                     </LinearLayout>
+                    <RatingBar
+                        android:id="@+id/ratingBar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        style="?android:attr/ratingBarStyleSmall"
+                        />
+
                 </LinearLayout>
             </RelativeLayout>
 
             <LinearLayout
+                android:id="@+id/linespin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/lytPrice"
@@ -186,6 +195,7 @@
                         android:spinnerMode="dropdown"
                         android:textSize="@dimen/_10ssp" />
                 </RelativeLayout>
+
 
                 <RelativeLayout
                     android:id="@+id/qtyLyt"
@@ -243,7 +253,11 @@
                         android:visibility="visible" />
                 </RelativeLayout>
 
+
             </LinearLayout>
+
+
+
         </RelativeLayout>
 
         <TextView

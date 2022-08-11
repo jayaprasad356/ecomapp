@@ -3,6 +3,8 @@ package com.gm.onlukr.fragment;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.os.Bundle;
+import android.os.CountDownTimer;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
@@ -54,6 +56,9 @@ public class TrackerDetailFragment extends Fragment {
     HashMap<String, String> hashMap;
     private ShimmerFrameLayout mShimmerViewContainer;
     ScrollView scrollView;
+    long milliseconds;
+    long startTime = System.currentTimeMillis();
+    TextView tvcountDown;
 
     @SuppressLint("SetTextI18n")
     @Override
@@ -64,6 +69,7 @@ public class TrackerDetailFragment extends Fragment {
         session = new Session(activity);
 
         lytPriceDetail = root.findViewById(R.id.lytPriceDetail);
+        tvcountDown = root.findViewById(R.id.tvcountDown);
         lytPromo = root.findViewById(R.id.lytPromo);
         lytWallet = root.findViewById(R.id.lytWallet);
         tvItemTotal = root.findViewById(R.id.tvItemTotal);
@@ -112,8 +118,48 @@ public class TrackerDetailFragment extends Fragment {
                     dialog.dismiss();
                 })
                 .setNegativeButton(getString(R.string.cancel), (dialog, which) -> dialog.dismiss()).show());
+        countDown();
 
         return root;
+    }
+
+    private void countDown()
+    {
+
+
+        //adding 24 hours milliseconds with current time of milliseconds to make it 24 hours milliseconds.
+        milliseconds = System.currentTimeMillis() + 86400000; // 24 hours = 86400000 milliseconds
+
+        CountDownTimer cdt = new CountDownTimer(milliseconds,1000) {
+            @Override
+            public void onTick(long millisUntilFinished) {
+
+                startTime =startTime -1;
+                Long serverUptimeSeconds =
+                        (millisUntilFinished - startTime ) / 1000;
+
+                // now you repalce txtViewHours,  txtViewMinutes, txtViewSeconds by your textView.
+
+                String hoursLeft = String.format("%d", (serverUptimeSeconds % 86400) / 3600);
+                Log.d("hoursLeft",hoursLeft);
+
+                String minutesLeft = String.format("%d", ((serverUptimeSeconds % 86400) % 3600) / 60);
+                Log.d("minutesLeft",minutesLeft);
+
+                String secondsLeft = String.format("%d", ((serverUptimeSeconds % 86400) % 3600) % 60);
+                Log.d("secondsLeft",secondsLeft);
+                tvcountDown.setText(hoursLeft +":"+ minutesLeft +":"+ secondsLeft);
+
+
+            }
+
+            @Override
+            public void onFinish() {
+
+            }
+        };
+
+        cdt.start();
     }
 
     public void GetReOrderData() {

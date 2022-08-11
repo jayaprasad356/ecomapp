@@ -3,8 +3,8 @@ package com.gm.onlukr.helper;
 import java.util.HashMap;
 
 public class Constant {
-    public static final String MainBaseUrl = "https://onlukr.greymatterworks.in/"; //Admin panel url
-    //public static final String MainBaseUrl = "http://admin.blackkite.site/"; //Admin panel url
+    //public static final String MainBaseUrl = "https://onlukr.greymatterworks.in/"; //Admin panel url
+    public static final String MainBaseUrl = "http://192.168.43.38/ecom/"; //Admin panel url
 
     public static final String WebSiteUrl = ""; //Admin panel url
 
@@ -59,6 +59,8 @@ public class Constant {
     public static final String GET_ALL_DATA_URL = BaseUrl + "get-all-data.php";
     public static final String SLIDER_IMAGES_URL = BaseUrl + "slider-images.php";
     public static final String GET_PRODUCTS_URL = BaseUrl + "get-products.php";
+    public static final String ADD_RATINGS_URL = BaseUrl + "add-ratings.php";
+    public static final String GET_USER_RATINGS_URL = BaseUrl + "get-user-ratings.php";
     public static final String GET_SELLER_DATA_URL = BaseUrl + "get-seller-data.php";
     public static final String SETTING_URL = BaseUrl + "settings.php";
     public static final String GET_FAVORITES_URL = BaseUrl + "favorites.php";
@@ -152,6 +154,7 @@ public class Constant {
     public static final String CITY_ID = "city_id";
     public static final String PINCODE_ID = "pincode_id";
     public static final String PINCODE = "pincode";
+    public static final String RATINGS = "ratings";
     public static final String CITY = "city";
     public static final String AREA_ID = "area_id";
     public static final String AREA_TEXT = "area_text";

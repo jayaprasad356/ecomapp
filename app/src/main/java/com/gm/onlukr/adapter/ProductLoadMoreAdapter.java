@@ -16,6 +16,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.RatingBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -116,7 +117,6 @@ public class ProductLoadMoreAdapter extends RecyclerView.Adapter<RecyclerView.Vi
 //                    holder.imgIndicator.setImageResource(R.drawable.ic_non_veg_icon);
 //            }
             holder.productName.setText(Html.fromHtml(product.getName(), 0));
-
             Picasso.get().
                     load(product.getImage())
                     .fit()
@@ -189,6 +189,7 @@ public class ProductLoadMoreAdapter extends RecyclerView.Adapter<RecyclerView.Vi
 //        Net_Price Original Cost + GST Amount
 
         holder.tvMeasurement.setText(extra.getMeasurement() + extra.getMeasurement_unit_name());
+        holder.ratingBar.setRating(Float.parseFloat(product.getRatings()));
 
         if (session.getBoolean(Constant.IS_USER_LOGIN)) {
 
@@ -436,6 +437,7 @@ public class ProductLoadMoreAdapter extends RecyclerView.Adapter<RecyclerView.Vi
         RelativeLayout qtyLyt;
         LottieAnimationView lottieAnimationView;
         Button btnAddToCart;
+        RatingBar ratingBar;
 
         public HolderItems(View itemView) {
             super(itemView);
@@ -457,6 +459,7 @@ public class ProductLoadMoreAdapter extends RecyclerView.Adapter<RecyclerView.Vi
             lytSpinner = itemView.findViewById(R.id.lytSpinner);
             btnAddToCart = itemView.findViewById(R.id.btnAddToCart);
             lottieAnimationView = itemView.findViewById(R.id.lottieAnimationView);
+            ratingBar = itemView.findViewById(R.id.ratingBar);
 
         }
 
